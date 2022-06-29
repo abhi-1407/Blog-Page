@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+</head>
+<body>
+<%- include('partials/header'); -%>
+<h1>Home</h1>
+<p><%= startingContent %></p>
+<br>
+<% p1.forEach(function(p1){ %>
+    <h1><%= p1.title %></h1>
+    <p><%= p1.post_body.substring(0,100)+"..." %></p>
+    <a href="/posts/<%=p1._id%>">Read More</a>
+<% }) %>
+<%- include('partials/footer'); -%>
+</body>
+</html>
